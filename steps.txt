@@ -1,0 +1,18 @@
+训练完之后查看loss和iou
+
+1.输出重定向
+做训练的时候输出重定向得到训练日志文件
+即 tee train_yolov3.log
+./darknet detector train cfg/voc.data cfg/yolov3-voc.cfg darknet53.conv.74 -gpus 0 | tee train_yolov3.log
+
+2.解析日志文件
+具体见代码extract_log.py
+解析loss和iou得到两个txt文件
+
+3.loss曲线可视化
+具体查看代码train_loss_visualization.py
+需要修改行数lines（在代码第六行）
+
+4.iou曲线可视化
+具体查看train_iou_visualization.py
+同样修改lines（代码中第六行）
